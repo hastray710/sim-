@@ -16,3 +16,5 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+   //使用的VScode插件：Vue VSCode Snippets
+   //如果使用vite_moke模拟接口，记得安装2.9.6版本，不然会莫名其妙报错

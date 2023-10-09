@@ -1,15 +1,21 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div>
-<svg>
-  <use xlink:href="#icon-1" fill="black"></use>
-</svg> 
+    <h1>test axios</h1>
   </div>
 </template>
 
-<style scoped>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { reqLogin } from './api/user'
+onMounted(() => {
+  reqLogin({ username: 'admin', password: '111111' })
+})
+</script>
 
+<style scoped lang="scss">
+div {
+  h1 {
+    color: $color-base;
+  }
+}
 </style>

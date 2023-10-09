@@ -11,12 +11,13 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 //@ts-ignore
 const app = createApp(App)
 //获取应用实例对象
-app.use(ElementPlus,{
-    locale:zhCn//element-plus国际化配置
-}
-    );
+app.use(ElementPlus, {
+  locale: zhCn, //element-plus国际化配置
+})
 //安装element-plus插件
 import 'virtual:svg-icons-register'
 //svg插件需要配置代码
+import '@/styles/index.scss'
+//引入模板的全局样式
 app.mount('#app')
 //将应用挂在到挂载点上
