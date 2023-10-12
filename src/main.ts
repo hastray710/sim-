@@ -15,6 +15,8 @@ import '@/styles/index.scss'
 //引入模板的全局样式
 import router from './router'
 //引入路由
+import pinia from './store'
+//引入仓库pinia
 const app = createApp(App)
 //获取应用实例对象
 app.use(ElementPlus, {
@@ -23,5 +25,7 @@ app.use(ElementPlus, {
 //安装element-plus插件
 app.use(router);
 //注册模板路由
+app.use(pinia);
+//安装仓库pinia
 app.mount('#app')
 //将应用挂在到挂载点上

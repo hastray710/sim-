@@ -7,16 +7,15 @@
                 <el-form class="login_form">
                     <h1>SIM卡管理登录页面</h1>
                     <el-form-item>
-                        <el-input :prefix-icon="User"></el-input>
+                        <el-input :prefix-icon="User" v-model="loginForm.username"></el-input>
                     </el-form-item>
                     <!-- 用户名输入框 -->
                     <el-form-item>
-                        <el-input :prefix-icon="Lock" type="password"></el-input>
+                        <el-input :prefix-icon="Lock" type="password" v-model="loginForm.password" show-password></el-input>
                     </el-form-item>
                     <!-- 密码输入框 -->
                     <el-form-item>
-                        <el-button type="primary" size="default">登录
-                        </el-button>
+                        <el-button type="primary" size="default" @click="login">登录</el-button>
                         <!-- 登录按钮 -->
                     </el-form-item>
                 </el-form>
@@ -31,7 +30,28 @@
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue';
 import { reactive } from 'vue';
-let loginForm = reactive({username:'',password:''})
+import useUserStore from '@/store/modules/user';
+//引入用户相关的小仓库
+import { useRouter } from 'vue-router';
+let $router = useRouter();
+//获取路由
+let useStore = useUserStore();
+let loginForm = reactive({ username: 'admin', password: '111111' })
+//收集账号与密码的数据
+const login = async () => {
+    try {
+        await useStore.userLogin(loginForm);
+        //保证登录成功
+        $router.push('/');
+    } catch (error) {
+
+    }
+
+}
+//登录按钮回调.
+//通知仓库发登录请求
+//请求成功->进入一级路由
+//请求失败->弹出登录失败信息
 </script>
 
 <style scoped lang="scss">
