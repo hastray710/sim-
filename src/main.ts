@@ -23,9 +23,9 @@ app.use(ElementPlus, {
   locale: zhCn, //element-plus国际化配置
 })
 //安装element-plus插件
-app.use(router);
+app.use(router)
 //注册模板路由
-app.use(pinia);
+app.use(pinia)
 //安装仓库pinia
 app.mount('#app')
 //将应用挂在到挂载点上
