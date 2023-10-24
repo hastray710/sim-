@@ -3,7 +3,7 @@ export interface loginForm {
   password: string
 }
 interface dataType {
-  token?: string,//前面加问号是涵盖了无返回的情况，既字符串和空值
+  token?: string //前面加问号是涵盖了无返回的情况，既字符串和空值
   message?: string
 }
 //登录接口需要携带参数ts类型

@@ -7,15 +7,30 @@
         <el-form class="login_form">
           <h1>SIM卡管理登录页面</h1>
           <el-form-item>
-            <el-input :prefix-icon="User" v-model="loginForm.username"></el-input>
+            <el-input
+              :prefix-icon="User"
+              v-model="loginForm.username"
+            ></el-input>
           </el-form-item>
           <!-- 用户名输入框 -->
           <el-form-item>
-            <el-input :prefix-icon="Lock" type="password" v-model="loginForm.password" show-password></el-input>
+            <el-input
+              :prefix-icon="Lock"
+              type="password"
+              v-model="loginForm.password"
+              show-password
+            ></el-input>
           </el-form-item>
           <!-- 密码输入框 -->
           <el-form-item>
-            <el-button :loading="loading" type="primary" size="default" @click="login">登录</el-button>
+            <el-button
+              :loading="loading"
+              type="primary"
+              size="default"
+              @click="login"
+            >
+              登录
+            </el-button>
             <!-- 登录按钮 -->
           </el-form-item>
         </el-form>
@@ -37,31 +52,31 @@ import { ElNotification } from 'element-plus'
 //引入消息气窗的组件
 let $router = useRouter()
 //获取路由
-let loading = ref(false);
+let loading = ref(false)
 //控制加载按钮效果
 let useStore = useUserStore()
 let loginForm = reactive({ username: 'admin', password: '111111' })
 //收集账号与密码的数据
 const login = async () => {
-  loading.value = true;
+  loading.value = true
   try {
     await useStore.userLogin(loginForm)
     //保证登录成功
-    $router.push('/');
+    $router.push('/')
     //编程时导航跳转到展示数据首页
     ElNotification({
       type: 'success',
-      message: '登录成功'
-    });
+      message: '登录成功',
+    })
     //登录成功的信息提示
-    loading.value = false;
+    loading.value = false
     //登录成功加载效果也消失
   } catch (error) {
-    loading.value = false;
+    loading.value = false
     //登录失败加载效果消失
     ElNotification({
       type: 'error',
-      message: (error as Error).message
+      message: (error as Error).message,
     })
   }
 }
