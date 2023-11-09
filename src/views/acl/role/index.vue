@@ -1,13 +1,9 @@
 <template>
-    <div>
-<p>子账户管理</p>
-    </div>
+  <div>
+    <p>子账户管理</p>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

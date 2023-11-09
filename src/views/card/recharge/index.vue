@@ -1,13 +1,9 @@
 <template>
-    <div>
-<p>账户余额/套餐充值</p>
-    </div>
+  <div>
+    <p>账户余额/套餐充值</p>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
