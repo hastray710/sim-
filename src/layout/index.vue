@@ -1,7 +1,7 @@
 <template>
   <div class="layout_container">
     <div class="layout_slider" :class="{ fold: LayOutSettingStore.fold ? true : false }">
-      <div> </div>
+      <div></div>
       <!-- 预留一片空白区域 -->
       <el-scrollbar class="scrollbar">
         <!-- 滚动组件 -->
@@ -30,19 +30,19 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
+import { useRoute } from 'vue-router'
 //获取路由对象
-import Menu from './menu/index.vue';
+import Menu from './menu/index.vue'
 //引入菜单组件
-import Main from './main/index.vue';
+import Main from './main/index.vue'
 //右侧内容展示区域
-import Tabbar from './tabbar/index.vue';
+import Tabbar from './tabbar/index.vue'
 //引入顶部tabbar组件
-import Middle from './middle/index.vue';
+import Middle from './middle/index.vue'
 //引入顶部tabbar组件
-import useUserStore from '@/store/modules/user';
+import useUserStore from '@/store/modules/user'
 //获取用户相关的小仓库
-import useLayOutSettingStore from '@/store/modules/setting';
+import useLayOutSettingStore from '@/store/modules/setting'
 
 let userStore = useUserStore();
 let LayOutSettingStore = useLayOutSettingStore();
@@ -53,7 +53,7 @@ let $route = useRoute();
 
 <script lang="ts">
 export default {
-  name: "Layout"
+  name: 'Layout',
 }
 </script>
 <style scoped lang="scss">

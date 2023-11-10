@@ -11,7 +11,7 @@
 <script setup lang="ts"></script>
 <script lang="ts">
 export default {
-  name: "Main"
+  name: 'Main',
 }
 </script>
 
@@ -28,4 +28,5 @@ export default {
   opacity: 1;
 }
 
-// 切换子界面动画效果</style>
+// 切换子界面动画效果
+</style>
