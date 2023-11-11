@@ -42,25 +42,24 @@ let useUserStore = defineStore('User', {
     },
     //用户登录的方法
     async userInfo() {
-      let result = await reqUserInfo();
+      let result = await reqUserInfo()
       //获取用户信息进行存储仓库当中（用户头像、名字）
       if (result.code == 200) {
         this.username = result.data.checkUser.username;
+        return 'ok';
       } else {
-
+        return Promise.reject('获取用户信息失败');
       }
       //如果获取用户信息成功，存储信息
     },
     //获取用户信息方法
     userLogout() {
-
       //目前没有mock接口：退出登录接口（通知服务器本地用户唯一识别失效）
-      this.token = '';
-      this.username = '';
-      REMOVE_TOKEN();
+      this.token = ''
+      this.username = ''
+      REMOVE_TOKEN()
       //清空动作
-
-    }
+    },
     //用户退出登录方法
   },
   //异步/逻辑的地方

@@ -29,7 +29,7 @@ app.use(globalComponent)
 //安装自定义插件
 app.use(router)
 //注册模板路由
-import './permisstion';
+import './permisstion'
 //引入路由鉴权文件
 app.use(pinia)
 //安装仓库pinia

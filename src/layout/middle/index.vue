@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { ref } from 'vue';
+import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 
-let $route = useRoute();
+let $route = useRoute()
 // const handler = () => {
 //   console.log($route.matched)
 // }     测试代码

@@ -1,12 +1,19 @@
 <template>
   <div class="layout_container">
-    <div class="layout_slider" :class="{ fold: LayOutSettingStore.fold ? true : false }">
+    <div
+      class="layout_slider"
+      :class="{ fold: LayOutSettingStore.fold ? true : false }"
+    >
       <div></div>
       <!-- 预留一片空白区域 -->
       <el-scrollbar class="scrollbar">
         <!-- 滚动组件 -->
-        <el-menu :collapse="LayOutSettingStore.fold ? true : false" :default-active="$route.path"
-          background-color="rgb(48, 65, 86)" text-color="white">
+        <el-menu
+          :collapse="LayOutSettingStore.fold ? true : false"
+          :default-active="$route.path"
+          background-color="rgb(48, 65, 86)"
+          text-color="white"
+        >
           <!-- 根据路由动态生成菜单 -->
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
@@ -14,15 +21,24 @@
       </el-scrollbar>
     </div>
     <!-- 左侧菜单 -->
-    <div class="layout_tabbar" :class="{ fold: LayOutSettingStore.fold ? true : false }">
+    <div
+      class="layout_tabbar"
+      :class="{ fold: LayOutSettingStore.fold ? true : false }"
+    >
       <Tabbar></Tabbar>
     </div>
     <!-- 顶部导航 -->
-    <div class="layout_middle" :class="{ fold: LayOutSettingStore.fold ? true : false }">
+    <div
+      class="layout_middle"
+      :class="{ fold: LayOutSettingStore.fold ? true : false }"
+    >
       <Middle></Middle>
     </div>
     <!-- 顶部分页 -->
-    <div class="layout_main" :class="{ fold: LayOutSettingStore.fold ? true : false }">
+    <div
+      class="layout_main"
+      :class="{ fold: LayOutSettingStore.fold ? true : false }"
+    >
       <Main></Main>
     </div>
     <!-- 内容展示区域 -->
@@ -44,10 +60,10 @@ import useUserStore from '@/store/modules/user'
 //获取用户相关的小仓库
 import useLayOutSettingStore from '@/store/modules/setting'
 
-let userStore = useUserStore();
-let LayOutSettingStore = useLayOutSettingStore();
+let userStore = useUserStore()
+let LayOutSettingStore = useLayOutSettingStore()
 //获取layout配置仓库
-let $route = useRoute();
+let $route = useRoute()
 //获取路由对象
 </script>
 
@@ -114,7 +130,7 @@ export default {
     position: absolute;
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $base-middle-height - $base-tabbar-height);
-    background: blue;
+    // background: blue;
     left: $base-menu-width;
     top: calc($base-tabbar-height + $base-middle-height);
     padding: 20px;

@@ -15,11 +15,14 @@
       </span>
       <el-dropdown trigger="click">
         <span class="el-dropdown-link">
-          {{ userStore.username }}<el-icon class="el-icon--right"><arrow-down /></el-icon>
+          {{ userStore.username }}
+          <el-icon class="el-icon--right"><arrow-down /></el-icon>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item :icon="Plus" @click="logout">退出登录</el-dropdown-item>
+            <el-dropdown-item :icon="Plus" @click="logout">
+              退出登录
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -30,28 +33,27 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-import useLayOutSettingStore from '@/store/modules/setting';
+import { useRouter } from 'vue-router'
+import useLayOutSettingStore from '@/store/modules/setting'
 //获取layout配置相关的仓库
-import useUserStore from '@/store/modules/user';
+import useUserStore from '@/store/modules/user'
 //获取用户相关的小仓库
-let LayOutSettingStore = useLayOutSettingStore();
-let userStore = useUserStore();
-let $router = useRouter();
+let LayOutSettingStore = useLayOutSettingStore()
+let userStore = useUserStore()
+let $router = useRouter()
 const changeIcon = () => {
   //图标进行切换
   LayOutSettingStore.fold = !LayOutSettingStore.fold
-};
+}
 //点击图标的方法
 //定义一个响应式数据控制图标切换
 const logout = () => {
   //第一件事：需要向服务器发请求【退出登录接口】，之后要加进来，调用接口
-  userStore.userLogout();
+  userStore.userLogout()
   //第二件事：仓库中关于用于相关的数据清空【token|username|看情况具体可能还有别的东西】
-  $router.push({ path: '/login' });
+  $router.push({ path: '/login' })
   //第三件事：跳转到登录页面
-
-};
+}
 //退出登录点击回调
 </script>
 <script lang="ts">
