@@ -7,3 +7,4 @@
 6.真TM的裂开，折叠菜单有个bug，收起后图标没有了，估计是跟title的位置有关，有时间慢慢去看
 7.调用退出接口，在tabbar那里，记得调用，同时增加接口后，需要在src\store\modules\user.ts下增加方法（登录退出）
 8.tabbar右上角的admin有一个‘plus’的报错，是关于Dropdown 下拉菜单的，暂时先不去管他
+9.还要做一个单卡详情的页面，要随着MSISDN跳转的，每个页面ID不同

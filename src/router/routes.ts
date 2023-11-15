@@ -76,17 +76,7 @@ export const constantRoute = [
         name: 'Add',
         meta: {
           title: '套餐新增', //菜单标题
-          hidden: false,
-          icon: 'HomeFilled',
-        },
-      },
-      {
-        path: '/card/datatraffic',
-        component: () => import('@/views/card/datatraffic/index.vue'),
-        name: 'Datatraffic',
-        meta: {
-          title: '流量池管理', //菜单标题
-          hidden: false,
+          hidden: true,
           icon: 'HomeFilled',
         },
       },
@@ -96,7 +86,7 @@ export const constantRoute = [
         name: 'Recharge',
         meta: {
           title: '账户余额/充值', //菜单标题
-          hidden: false,
+          hidden: true,
           icon: 'HomeFilled',
         },
       },
@@ -106,6 +96,36 @@ export const constantRoute = [
         name: 'Total',
         meta: {
           title: '流量年度报表', //菜单标题
+          hidden: true,
+          icon: 'HomeFilled',
+        },
+      },
+    ],
+  },
+  {
+    path: '/datatraffic',
+    component: () => import('@/layout/index.vue'),
+    name: 'Datatraffic',
+    meta: {
+      title: '流量池管理', //菜单标题
+      hidden: false,
+      icon: 'HomeFilled',
+    },
+    children: [
+      {
+        path: '/datatraffic/customer',
+        component: () => import('@/views/datatraffic/customer/index.vue'),
+        meta: {
+          title: '客户流量池', //菜单标题
+          hidden: false,
+          icon: 'HomeFilled',
+        },
+      },
+      {
+        path: '/datatraffic/supplier',
+        component: () => import('@/views/datatraffic/supplier/index.vue'),
+        meta: {
+          title: '供应商流量池', //菜单标题
           hidden: false,
           icon: 'HomeFilled',
         },

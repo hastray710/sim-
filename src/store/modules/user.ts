@@ -45,10 +45,10 @@ let useUserStore = defineStore('User', {
       let result = await reqUserInfo()
       //获取用户信息进行存储仓库当中（用户头像、名字）
       if (result.code == 200) {
-        this.username = result.data.checkUser.username;
-        return 'ok';
+        this.username = result.data.checkUser.username
+        return 'ok'
       } else {
-        return Promise.reject('获取用户信息失败');
+        return Promise.reject('获取用户信息失败')
       }
       //如果获取用户信息成功，存储信息
     },
